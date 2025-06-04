@@ -1,23 +1,24 @@
+/*resete basico*/
 @import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 body{
     background: #e6e6e6;
-     font-family: "Ancizar Serif", serif;
+    font-family: "Ancizar Serif", serif;
 }
 #container{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
 header{
-    background: #1F2937;
-    color:#fff;
+    background: #1f2937;
+    color: #fff;
     padding: 20px;
     display: flex;
     justify-content: space-around;
@@ -27,26 +28,28 @@ header nav ul{
     padding: 0;
     margin: 10px;
     display: flex;
-    gap:10px;
+    gap: 30px;
 }
 header nav ul li a{
-color:#fff;
-text-decoration: none;
-font-size: 1.4rem;
-}
-/*HOVER é uma pseudo-classe que realiza um efeito ao passar o mouse*/
-header nav ul li a:hover{
-    text-decoration: underline 5px #fff;
-}
+      color: #bdbdbd; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Permite manipular como bloco */
+    transition: 0.2s; /* Transição suave para hover */
+    font-size: 1.4em;
 
+}
+/* HOVER é uma pseudo-classe que realiza um efeito ao passar o mouse  */
+header nav ul li a:hover{
+ color: white; /* Muda cor ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom leve */
+}
 #conteudo{
     display: grid;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 2fr 200px;
 }
-
 main{
     display: flex;
-    flex-wrap: wrap;/*PERMITE QUE OS ITEMS FLEXIVEIS QUEBREM DE LINHA SE NÃO HOUVER ESPAÇO NA MESMA LINHA */
+    flex-wrap:wrap;
     justify-content: center;
 }
 .produto{
@@ -54,48 +57,62 @@ main{
     height: 400px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid #1F2937;
-    border-radius: 20px;
-    background: #fff;
+    border: 1px solid #1f2937;
+    background: white;
+    border-radius: 30px;
+    text-align: center;
 }
-/*olha o easteregg*/
-.produto img{
+.produto img{ 
     width: 100%;
     height: 150px;
     margin-bottom: 10px;
-    border-radius: 20px;
+    border-radius: 30px;
     object-fit: cover;
 }
 .preco{
     font-weight: 700;
-    margin-top: 50px;
+    margin-top: 30px;
+    color: #1f2937;
     text-align: center;
-    color:#1F2937;
-    font-size: 1.7rem;
+    font-size: 1.7em;
+    
 }
 button{
     background: #D9D2D0;
-    margin-top: 10px;
-    margin-left: 10px;
+    border-radius: 30px;
     padding: 15px 45px;
-    border-radius: 20px;
     cursor: pointer;
+    display: block;
+    margin: 25px auto 0 auto; /* cima, direita, baixo, esquerda */
+    transition: 0.2s; /* Transição suave */
 }
 button:hover{
-    background: #1F2937;
-    transition: .1s;
-    color: #ffff;
-}
-aside{
-    width: 200px;
-    padding: 25px;
-    background-color: #f8f8f8;
-}
-footer{
+    box-shadow: 0px 0px 8px #ffffff; /* Adiciona uma sombra branca */
+    transform: scale(1.05); /* Efeito de zoom leve */
     background: #1F2937;
     color:#fff;
+}
+    
+    
+aside{
+    width: 200px;
+    padding: 10px;
+    background-color:#F3F4F6 ;
+}
+
+aside ul{
+    list-style: none;
+}
+aside a {
+    text-decoration: none;
+    color: #151515;
+}
+footer{
+    background-color: #19243A;
     padding: 20px 0;
-    margin-top: auto;
+    margin-top:auto;
+    color: white;
+    
 }
 .footer-content{
     display: flex;
@@ -114,12 +131,11 @@ footer{
     margin-bottom: 5px;
 }
 .footer-content a{
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
-
-/* RESPONSIVIDADE */
-@media(max-width:768px){
+/* responsividade */
+@media(max-width:768px ){
     header nav ul{
         display: flex;
         flex-direction: column;
@@ -132,29 +148,37 @@ footer{
         text-align: center;
         border-radius: 40px;
         font-size: 1.3rem;
-        background:transparent(white);
+        background-image:linear-gradient ;
     }
-    header nav ul li a{
+     header nav ul li a{
         display: flex;
         justify-content: center;
         align-items: center;
-        color:#ffffff;
-    }
-        header nav ul li a:hover{
-        text-decoration: none;
-    }
-    #conteudo{
+        color: white;
+
+     }
+
+     header nav ul li a:hover{
+        
+      
+     transform: none; /* Efeito de zoom leve */
+     }
+     #conteudo{
         grid-template-columns: 1fr;
-    }
-    aside{
-        display:none;
-    }
-    .footer-content{
+
+     }
+     aside{
+        display: none;
+     }
+     .footer-content{
         display: flex;
         text-align: center;
         flex-direction: column;
         max-width: 100%;
         margin: 0 auto;
-    }
+     
+     }
+
+  
 
 }
